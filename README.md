@@ -14,7 +14,7 @@ oddeven runs three separately deployed services:
 - React and Next.js in frontend
 
 ### Why this monorepo
-- maximize code sharing, minimize duplicatiom
+- maximize code sharing, minimize duplication
 - shared dev tools (ESLint, Prettier, etc.)
 - single source of truth
 
