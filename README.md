@@ -1,5 +1,5 @@
 # oddeven.io
-oddeven.io is the place to mint NFTs on the Cardano blockchain.
+[oddeven.io](https://oddeven.io) is the place to mint NFTs on the Cardano blockchain.
 This repo contains all code related to oddeven.io
 
 ### Services
