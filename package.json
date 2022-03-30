@@ -1,6 +1,6 @@
 {
-  "name": "turborepo-basic-shared",
-  "version": "0.0.0",
+  "name": "oddeven.io",
+  "version": "1.0.0",
   "private": true,
   "workspaces": [
     "apps/*",
@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "turbo": "^1.1.10"
   },
   "engines": {
     "npm": ">=7.0.0",
