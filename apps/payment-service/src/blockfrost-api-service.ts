@@ -1,7 +1,10 @@
-import { Transaction } from "./blockchain-service";
+import { BlockfrostAPIProvider, UTXOResponse } from "./blockfrost-api-provider";
 
-export interface BlockfrostAPIProvider {
-    getAddressUTXOs(address: string): Promise<Transaction>;
+export class BlockfrostAPIService implements BlockfrostAPIProvider {
+
+    public getAddressUTXOs(address: string): Promise<UTXOResponse[]> {
+        return new Promise<UTXOResponse[]>(async (resolve, reject) => {
+            return resolve([]);
+        });
+    }
 }
-
-// todo: implement actual blockfrost api

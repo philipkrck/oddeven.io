@@ -1,27 +1,10 @@
-import { BlockfrostAPIProvider } from "./blockfrost-api-service";
+import { BlockfrostAPIProvider, UTXOResponse } from "./blockfrost-api-provider";
 
 
-
-export interface Transaction {
+export type UTXO = {
     txHash: string;
     amountLovelace: number;
 }
-
-interface UTXOResponse {
-    tx_hash: string;
-    amount: {
-        quantity: string;
-    }[];
-}
-
-// interface UTXOsResponse {
-//     inputs: UTXO[];
-// }
-
-interface UTXO {
-    address: string;
-}
-
 
 export class BlockchainService {
 
@@ -32,37 +15,41 @@ export class BlockchainService {
     }
 
     // returns most recent addresses for specified wallet address
-    public getUTXOAmounts(address: string): Promise<Transaction[]> {
-        return new Promise<Transaction[]>(async (resolve, reject) => {
+    public getUTXOAmounts(address: string): Promise<UTXO[]> {
+        return new Promise<UTXO[]>(async (resolve, reject) => {
 
             await this.api.getAddressUTXOs(address)
-                .then((json) => {
-                    resolve(this.utxoAmounts(json))
+                .then((utxosResponse) => {
+                    resolve(this.utxoAmounts(utxosResponse))
                 }).catch((err) => {
                     reject(err);
                 });
         });
     }
 
-    private utxoAmounts(json: any): Transaction[] {
-        const utxos: UTXOResponse[] = JSON.parse(json);
-        const transactions = utxos.map((utxo) => {
+    private utxoAmounts(utxosResponse: UTXOResponse[]): UTXO[] {
+        const utxos = utxosResponse.map((utxo) => {
             return {
                 txHash: utxo.tx_hash,
                 amountLovelace: Number(utxo.amount[0].quantity)
             }
         });
         
-        return transactions;
+        return utxos;
     }
-    // function getUTXOs():
 
-    public getSenderAddress(senderAddress: string): Promise<string> {
-        return new Promise<string>((resolve, reject) => {
+    // public getSenderAddress(transactionHash: string): Promise<string> {
+    //     return new Promise<string>(async (resolve, reject) => {
+    //         await this.api.getTransactionUTXOs(transactionHash)
+    //             .then((json) => {
+                    
+    //             });
+            
+    //         resolve('');
+    //     });
+    // }
 
-            resolve('');
-        });
-    }
+    // private getFirstUTXOInputAddress(json: )
 
     // private outputAddress(utxos: UTXOsResponse): string {
     //     return utxos.inputs[0].address;

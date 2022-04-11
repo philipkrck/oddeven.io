@@ -6,6 +6,7 @@
   "scripts": {
     "lint": "todo",
     "test": "jest --testPathPattern=/__tests__/.+\\.spec\\.ts$",
+    "tdd": "jest --watch --testPathPattern=/__tests__/.+\\.spec\\.ts$",
     "itest": "JEST_JUNIT_OUTPUT_DIR=test-reports JEST_JUNIT_OUTPUT_NAME=itests.xml jest --testPathPattern=/__itests__/.+\\.spec\\.ts$ --reporters=default --reporters=jest-junit --silent",
     "start-dev": "npm run build && node dist/index.js",
     "build": "npm run clean && npm run compile",
@@ -13,8 +14,6 @@
     "compile": "npx tsc -b tsconfig.json"
   },
   "devDependencies": {
-    "@types/jest": "^27.4.1",
-    "@types/node": "^17.0.12",
     "config": "*",
     "eslint": "7.32.0",
     "fast-check": "^2.24.0",
