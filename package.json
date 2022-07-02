@@ -14,17 +14,20 @@
   },
   "devDependencies": {
     "@types/faker": "^5.1.4",
+    "@types/node": "^17.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.30.3",
     "faker": "^5.1.0",
     "fast-check": "^2.7.0",
     "jest": "^26.6.1",
     "jest-junit": "^12.0.0",
     "nock": "^13.1.0",
+    "npm-force-resolutions": "^0.0.10",
     "prettier": "^2.5.1",
     "quicktype": "^15.0.258",
     "superagent": "^6.1.0",
     "ts-jest": "^26.4.3",
     "turbo": "^1.1.10",
-    "@types/node": "^17.0.12"
+    "typescript": "^4.0.5"
   },
   "engines": {
     "npm": ">=7.0.0",

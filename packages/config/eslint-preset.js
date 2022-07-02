@@ -1,5 +1,10 @@
 module.exports = {
-  extends: ["next", "prettier"],
+  extends: [
+    "next",
+    "prettier",
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   settings: {
     next: {
       rootDir: ["apps/*/", "packages/*/"],
@@ -9,4 +14,8 @@ module.exports = {
     "@next/next/no-html-link-for-pages": "off",
     "react/jsx-key": "off",
   },
+  ignorePatterns: [
+    "**/node_modules/**",
+    "**/dist/**"
+  ]
 };
