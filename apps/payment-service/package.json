@@ -4,7 +4,7 @@
   "description": "service handling wallet payments",
   "main": "dist/index.js",
   "scripts": {
-    "lint": "todo",
+    "lint": "eslint .",
     "test": "jest --testPathPattern=/__tests__/.+\\.spec\\.ts$",
     "tdd": "jest --watch --testPathPattern=/__tests__/.+\\.spec\\.ts$",
     "itest": "JEST_JUNIT_OUTPUT_DIR=test-reports JEST_JUNIT_OUTPUT_NAME=itests.xml jest --testPathPattern=/__itests__/.+\\.spec\\.ts$ --reporters=default --reporters=jest-junit --silent",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "config": "*",
-    "eslint": "7.32.0",
+    "eslint": "^8.19.0",
     "fast-check": "^2.24.0",
     "jest": "^27.5.1",
     "jest-junit": "^13.0.0",
@@ -25,6 +25,6 @@
     "superagent": "^7.1.2",
     "ts-jest": "^27.1.4",
     "tsconfig": "*",
-    "typescript": "^4.5.3"
+    "typescript": "4.5"
   }
 }
