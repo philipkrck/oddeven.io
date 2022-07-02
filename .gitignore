@@ -9,9 +9,9 @@ node_modules
 coverage
 
 # output
-.next/**
-out/**
-build/**
+/**/.next/**
+/**/out/**
+/**/build/**
 dist/**
 
 # misc
